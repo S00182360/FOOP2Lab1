@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FOOP2Lab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="AntiqueWhite">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="116,28,0,0" TextWrapping="Wrap" Text="Bands" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.518,0.471"/>
+        <TextBlock x:Name="tbkInfo" HorizontalAlignment="Left" Margin="495,57,0,0" TextWrapping="Wrap" Text="Band Info" VerticalAlignment="Top" FontSize="20"/>
+        <ListBox x:Name="lbxBandList" HorizontalAlignment="Left" Height="238" Margin="113,106,0,0" VerticalAlignment="Top" Width="272"/>
+        <TextBlock x:Name="tbkGenre" HorizontalAlignment="Left" Margin="116,62,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" FontSize="16"/>
+        <ComboBox x:Name="cbxFilterGenre" HorizontalAlignment="Left" Margin="188,62,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tbkAlbum" HorizontalAlignment="Left" Margin="500,201,0,0" TextWrapping="Wrap" Text="Albums" VerticalAlignment="Top" FontSize="18"/>
+        <ListBox x:Name="lbxAlbums" HorizontalAlignment="Left" Height="113" Margin="501,231,0,0" VerticalAlignment="Top" Width="210"/>
+        <TextBox x:Name="tbxDetail" HorizontalAlignment="Left" Height="96" Margin="495,100,0,0" TextWrapping="Wrap" Text="Choose a band to see more info..." VerticalAlignment="Top" Width="216"/>
+
     </Grid>
 </Window>
