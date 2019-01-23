@@ -14,6 +14,5 @@ namespace FOOP2Lab1
         {
             return string.Format("{0}, {1}, {2}", BandName, Genre, Year.ToString());
         }
-
     }
 }

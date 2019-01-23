@@ -22,13 +22,14 @@ namespace FOOP2Lab1
         public MainWindow()
         {
             InitializeComponent();
+
             #region INITAL BAND DECLARATION
             //Set bands for inital coding
             RockBand b1 = new RockBand
             {
                 BandName = "Muse",
                 Year = 1994,
-                Members = new List<string> { "Matthew Belamy", "Chris Wolstenholme", "Dominic Howard" }
+                Members = new List<string> { "Matthew Belamy", "Chris Wolstenholme", "Dominic Howard" },
             };
             RockBand b2 = new RockBand
             {
@@ -65,6 +66,16 @@ namespace FOOP2Lab1
             };
             #endregion INITAL BAND DECLARATION
 
+            #region ALBUM SET
+            b1.Albums = b1.SetAlbums();
+            b2.Albums = b2.SetAlbums();
+            b3.Albums = b3.SetAlbums();
+            b4.Albums = b4.SetAlbums();
+            b5.Albums = b5.SetAlbums();
+            b6.Albums = b6.SetAlbums();
+            #endregion ALBUM SET
+
+            #region ADD BANDS TO LIST
             //Add to bandlist
             BandList.Add(b1);
             BandList.Add(b2);
@@ -73,8 +84,18 @@ namespace FOOP2Lab1
             BandList.Add(b5);
             BandList.Add(b6);
             BandList.Sort();
+            #endregion ADD BANDS TO LIST
+
             //BandList.Reverse();
             lbxBandList.ItemsSource = BandList;
+        }
+
+        private void LbxBandList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Band selected = (Band)lbxBandList.SelectedValue;
+            tbkBandDetail.Text = "";
+            tbkBandDetail.Text = selected.SetDetail();
+            lbxAlbums.ItemsSource = selected.Albums;
         }
     }
 }

@@ -10,10 +10,10 @@ namespace FOOP2Lab1
     {
         public string Genre { get { return "Rock"; } }
 
+
         public override string ToString()
         {
             return string.Format("{0}, {1}, {2}", BandName, Genre, Year.ToString());
         }
-
     }
 }
