@@ -8,6 +8,8 @@ namespace FOOP2Lab1
 {
     abstract class Band : IComparable
     {
+        public enum Genres { Rock, Pop, Indie};
+        public Genres Genre { get; set; }
         public string BandName { get; set; }
         public int Year { get; set; }
         public List<string> Members { get; set; }

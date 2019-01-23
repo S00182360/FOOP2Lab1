@@ -18,6 +18,8 @@ namespace FOOP2Lab1
     public partial class MainWindow : Window
     {
         List<Band> BandList = new List<Band>();
+        List<Band> FilterList = new List<Band>();
+        List<string> cbxOptions = new List<string> { "All", "Rock", "Pop", "Indie" };
 
         public MainWindow()
         {
@@ -30,39 +32,45 @@ namespace FOOP2Lab1
                 BandName = "Muse",
                 Year = 1994,
                 Members = new List<string> { "Matthew Belamy", "Chris Wolstenholme", "Dominic Howard" },
+                Genre = Band.Genres.Rock
             };
             RockBand b2 = new RockBand
             {
                 BandName = "Panic at the Disco",
                 Year = 2004,
                 Members = new List<string> { "Brendon Urie", "Ryan Ross", "Dallon Weekes",
-                    "Jon Walker", "Spencer Smith", "Brent Wilson" }
+                    "Jon Walker", "Spencer Smith", "Brent Wilson" },
+                Genre = Band.Genres.Rock
             };
             PopBand b3 = new PopBand
             {
                 BandName = "The Beach Boys",
                 Year = 1961,
-                Members = new List<string> { "Brian Wilson", "Mike Love", "Dennis Wilson", "Carl Wilson"}
+                Members = new List<string> { "Brian Wilson", "Mike Love", "Dennis Wilson", "Carl Wilson"},
+                Genre = Band.Genres.Pop
             };
             PopBand b4 = new PopBand
             {
                 BandName = "One Direction",
                 Year = 2010,
                 Members = new List<string> { "Niall Horan", "Liam Payne", "Harry Styles",
-                    "Louis Tomlinson", "Zayne Malik" }
+                    "Louis Tomlinson", "Zayne Malik" },
+                Genre = Band.Genres.Pop
             };
             IndieBand b5 = new IndieBand
             {
                 BandName = "Artic Monkeys",
                 Year = 2002,
                 Members = new List<string> {  "Alex Turner", "Matt Helders", "Jamie Cook",
-                    "Nick O'Malley", "Andy Nicholson", "Glyn Jones" }
+                    "Nick O'Malley", "Andy Nicholson", "Glyn Jones" },
+                Genre = Band.Genres.Indie
             };
             IndieBand b6 = new IndieBand
             {
                 BandName = "The The",
                 Year = 1979,
-                Members = new List<string> { "Matt Johnson", "Johnny Marr", "Jools Holland" }
+                Members = new List<string> { "Matt Johnson", "Johnny Marr", "Jools Holland" },
+                Genre = Band.Genres.Indie
             };
             #endregion INITAL BAND DECLARATION
 
@@ -88,6 +96,9 @@ namespace FOOP2Lab1
 
             //BandList.Reverse();
             lbxBandList.ItemsSource = BandList;
+
+            cbxFilterGenre.ItemsSource = cbxOptions;
+            cbxFilterGenre.SelectedIndex = 0;
         }
 
         private void LbxBandList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -96,6 +107,17 @@ namespace FOOP2Lab1
             tbkBandDetail.Text = "";
             tbkBandDetail.Text = selected.SetDetail();
             lbxAlbums.ItemsSource = selected.Albums;
+        }
+
+
+
+        private void Filter(string selected)
+        {
+            FilterList.Clear();
+            foreach (var band in BandList)
+            {
+                //if(band.Genre)
+            }
         }
     }
 }

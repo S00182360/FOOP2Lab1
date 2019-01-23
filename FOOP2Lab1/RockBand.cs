@@ -8,12 +8,10 @@ namespace FOOP2Lab1
 {
     class RockBand : Band
     {
-        public string Genre { get { return "Rock"; } }
-
 
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}", BandName, Genre, Year.ToString());
+            return string.Format("{0}, {1}, {2}", BandName, Genre.ToString(), Year.ToString());
         }
     }
 }
