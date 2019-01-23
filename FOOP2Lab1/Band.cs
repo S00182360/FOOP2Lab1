@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FOOP2Lab1
 {
-    class Band : IComparable
+    abstract class Band : IComparable
     {
         public string BandName { get; set; }
         public int Year { get; set; }
