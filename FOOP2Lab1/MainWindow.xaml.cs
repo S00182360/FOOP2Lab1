@@ -30,14 +30,16 @@ namespace FOOP2Lab1
             RockBand b1 = new RockBand
             {
                 BandName = "Muse",
-                Year = 1994,
+                //Year = 1994,
+                YearFormed = new DateTime(1994, 01, 01),
                 Members = new List<string> { "Matthew Belamy", "Chris Wolstenholme", "Dominic Howard" },
                 Genre = Band.Genres.Rock
             };
             RockBand b2 = new RockBand
             {
                 BandName = "Panic at the Disco",
-                Year = 2004,
+                //Year = 2004,
+                YearFormed = new DateTime(2004, 01, 01),
                 Members = new List<string> { "Brendon Urie", "Ryan Ross", "Dallon Weekes",
                     "Jon Walker", "Spencer Smith", "Brent Wilson" },
                 Genre = Band.Genres.Rock
@@ -45,14 +47,16 @@ namespace FOOP2Lab1
             PopBand b3 = new PopBand
             {
                 BandName = "The Beach Boys",
-                Year = 1961,
+                //Year = 1961,
+                YearFormed = new DateTime(1961, 01, 01),
                 Members = new List<string> { "Brian Wilson", "Mike Love", "Dennis Wilson", "Carl Wilson"},
                 Genre = Band.Genres.Pop
             };
             PopBand b4 = new PopBand
             {
                 BandName = "One Direction",
-                Year = 2010,
+                //Year = 2010,
+                YearFormed = new DateTime(2010, 01, 01),
                 Members = new List<string> { "Niall Horan", "Liam Payne", "Harry Styles",
                     "Louis Tomlinson", "Zayne Malik" },
                 Genre = Band.Genres.Pop
@@ -60,7 +64,8 @@ namespace FOOP2Lab1
             IndieBand b5 = new IndieBand
             {
                 BandName = "Artic Monkeys",
-                Year = 2002,
+                //Year = 2002,
+                YearFormed = new DateTime(2002, 01, 01),
                 Members = new List<string> {  "Alex Turner", "Matt Helders", "Jamie Cook",
                     "Nick O'Malley", "Andy Nicholson", "Glyn Jones" },
                 Genre = Band.Genres.Indie
@@ -68,7 +73,8 @@ namespace FOOP2Lab1
             IndieBand b6 = new IndieBand
             {
                 BandName = "The The",
-                Year = 1979,
+                //Year = 1979,
+                YearFormed = new DateTime(1979, 01, 01),
                 Members = new List<string> { "Matt Johnson", "Johnny Marr", "Jools Holland" },
                 Genre = Band.Genres.Indie
             };

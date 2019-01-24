@@ -11,7 +11,7 @@ namespace FOOP2Lab1
 
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}", BandName, Genre.ToString(), Year.ToString());
+            return string.Format("{0}, {1}, {2}", BandName, Genre.ToString(), YearFormed.ToString("yyyy"));
         }
     }
 }
