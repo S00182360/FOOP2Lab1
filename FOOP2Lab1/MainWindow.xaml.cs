@@ -104,9 +104,12 @@ namespace FOOP2Lab1
         private void LbxBandList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Band selected = (Band)lbxBandList.SelectedValue;
-            tbkBandDetail.Text = "";
-            tbkBandDetail.Text = selected.SetDetail();
-            lbxAlbums.ItemsSource = selected.Albums;
+            if(selected != null)
+            {
+                tbkBandDetail.Text = "";
+                tbkBandDetail.Text = selected.SetDetail();
+                lbxAlbums.ItemsSource = selected.Albums;
+            }
         }
 
 
@@ -116,7 +119,30 @@ namespace FOOP2Lab1
             FilterList.Clear();
             foreach (var band in BandList)
             {
-                //if(band.Genre)
+                if(band.Genre.ToString() == selected)
+                {
+                    FilterList.Add(band);
+                }
+            }
+        }
+
+        private void CbxFilterGenre_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string genreSelect = (string)cbxFilterGenre.SelectedValue;
+            int selected = cbxFilterGenre.SelectedIndex;
+            switch(selected)
+            {
+                case 0:
+                    lbxBandList.ItemsSource = null;
+                    lbxBandList.ItemsSource = BandList;
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                    Filter(genreSelect);
+                    lbxBandList.ItemsSource = null;
+                    lbxBandList.ItemsSource = FilterList;
+                    break;
             }
         }
     }
