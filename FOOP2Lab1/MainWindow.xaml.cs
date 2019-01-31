@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+using Microsoft.Win32;
 
 namespace FOOP2Lab1
 {
@@ -149,6 +142,26 @@ namespace FOOP2Lab1
                     lbxBandList.ItemsSource = null;
                     lbxBandList.ItemsSource = FilterList;
                     break;
+            }
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if(lbxBandList.SelectedItem != null)
+            {
+                string json = JsonConvert.SerializeObject(lbxBandList.SelectedItem, Formatting.Indented);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.DefaultExt = ".json";
+                Nullable<bool> result = sfd.ShowDialog();
+
+                if (result == true)
+                {
+                    string fileName = sfd.FileName;
+                    using (StreamWriter sw = new StreamWriter(fileName))
+                    {
+                        sw.Write(json);
+                    }
+                }
             }
         }
     }

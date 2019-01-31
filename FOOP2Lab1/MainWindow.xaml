@@ -15,6 +15,7 @@
         <TextBlock x:Name="tbkAlbum" HorizontalAlignment="Left" Margin="459,202,0,0" TextWrapping="Wrap" Text="Albums" VerticalAlignment="Top" FontSize="18"/>
         <ListBox x:Name="lbxAlbums" HorizontalAlignment="Left" Height="113" Margin="459,231,0,0" VerticalAlignment="Top" Width="210"/>
         <TextBlock x:Name="tbkBandDetail" HorizontalAlignment="Left" Margin="459,106,0,0" TextWrapping="Wrap" Text="Select a Band to see more details..." VerticalAlignment="Top" Height="90" Width="210" Background="White"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="459,349,0,0" VerticalAlignment="Top" Width="111" Height="38" FontSize="18" Click="BtnSave_Click"/>
 
     </Grid>
 </Window>
